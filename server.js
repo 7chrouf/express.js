@@ -9,11 +9,9 @@ const checkWorkingHours = (req, res, next) => {
   const dayOfWeek = date.getDay();
   const hour = date.getHours();
 
-  if (dayOfWeek >= 1 && dayOfWeek <= 5 && hour >= 11 && hour <= 17) {
+  if (dayOfWeek >= 1 && dayOfWeek <= 5 && hour >= 9 && hour <= 17) {
     next();
-    console.log("ok");
   } else {
-    console.log("ok 2");
 
     return res.send(
       "Sorry, the web application is only available during working hours (Monday to Friday, 9 to 17)."
